@@ -83,26 +83,23 @@ const properties = [
       cuartos: 5,
       metros: 500
     }
-    
-
 ];
 
 var cards = document.querySelector("#cards")
-var htmlUpdate = "";
+
 
 function searchParameters() {
+    var htmlUpdate = "";
     var metersFrom = document.querySelector("#meters-from").value
     var metersTo = document.querySelector("#meters-to").value
-    var roms = document.querySelector("#roms").value
-    console.log(metersFrom);
-
+    var roms = document.querySelector("#roms").value    
+    
     if (isNaN(metersFrom) || isNaN(metersTo) || isNaN(roms)) {
         alert("Favor ingrese solo números")
 
     } else if (metersFrom == '' || metersTo == '' || roms == '') {
         alert("Campos no pueden estár vacios")
-    } else {
-        cards.innerHTML = htmlUpdate
+    } else {        
         for (let property of properties) {
             if ((property["metros"] >= metersFrom && property["metros"] <= metersTo) && property["cuartos"] == roms) {
                 htmlUpdate += ` <div class="card" style="width: 18rem;">
@@ -114,7 +111,8 @@ function searchParameters() {
                                         <p>Metros: ${property["metros"]}</p>
                                         <button>Ver más</button>
                                     </div>
-                                </div>`}                     
+                                </div>`} 
+
         }
     }
     cards.innerHTML = htmlUpdate
