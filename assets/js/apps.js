@@ -85,14 +85,12 @@ const properties = [
     }
 ];
 
-var cards = document.querySelector("#cards")
-
-
-function searchParameters() {
-    var htmlUpdate = "";
+function searchParameters() {    
+    var cards = document.querySelector("#cards")
     var metersFrom = document.querySelector("#meters-from").value
     var metersTo = document.querySelector("#meters-to").value
     var roms = document.querySelector("#roms").value    
+    var htmlUpdate = ""
     
     if (isNaN(metersFrom) || isNaN(metersTo) || isNaN(roms)) {
         alert("Favor ingrese solo números")
